@@ -53,6 +53,11 @@
 						<div>
 							<small>GitHub <a href="https://github.com/CaryLandholt">CaryLandholt</a></small>
 						</div>
+						<div>
+							<small>
+								<a href="mailto:cary@landholt.com">cary@landholt.com</a>
+							</small>
+						</div>
 					</p>
 				</section>
 
@@ -80,6 +85,36 @@
 							<p>And the winner is</p>
 							<img src="lib/images/sublime-text.png" height="150" class="fragment" />
 						</dif>
+					</section>
+
+					<section id="developer-autonomy">
+						<h2>Developer Autonomy</h2>
+						<h3>I don't want to wait for your API</h3>
+						<div class="fragment">
+							<img src="lib/images/nodejs.png" height="150" />
+							<img src="lib/images/express.jpg" height="150" />
+							<pre class="fragment"><code data-trim contenteditable class="javascript">
+// fake it with Node.js and Express (or something similar)
+
+app.get('/people', function(req, res) {
+  return [
+    {id: 0, name: 'Cary'},
+    {id: 1, name: 'Saasha'},
+    {id: 2, name: 'Planet'}
+  ];
+});
+							</code></pre>
+							<pre class="fragment"><code data-trim contenteditable class="javascript">
+// let's access from Angular
+// regardless of the backend server, use the same api
+
+var People,
+    people;
+
+People = $resource('/people'); /* this is the api signature */
+people = People.query();
+							</code></pre>
+						</div>
 					</section>
 
 					<section id="ie">
@@ -142,9 +177,9 @@ dist
 						</div>
 					</section>
 
-					<section id="minifiable">
+					<section id="everything-minifiable">
 						<h2>Principle</h2>
-						<h3>Minifiable</h3>
+						<h3>Everything Minifiable</h3>
 						<pre class="fragment"><code data-trim contenteditable class="javascript">
 // DO NOT
 
@@ -154,9 +189,7 @@ angular.module('app').controller('myController', function ($scope) {
 });
 						</code></pre>
 						<div class="fragment">
-							<p>
-								<a target="_blank" href="http://closure-compiler.appspot.com/home">Google Closure Compiler</a>
-							</p>
+							<p>Check it in <a target="_blank" href="http://closure-compiler.appspot.com/home">Google Closure Compiler</a></p>
 							<pre><code data-trim contenteditable class="javascript">
 // variable replacement will rename $scope
 
@@ -367,6 +400,11 @@ grunt server
 					</div>
 				</section>
 
+				<section id="end">
+					<h1>The End</h1>
+					<h3>By Cary Landholt</h3>
+					<iframe width="853" height="480" src="http://www.youtube.com/embed/M-wjQjsryMY?list=PLCBD579A7ADB6313A" frameborder="0" allowfullscreen></iframe>
+				</section>
 			</div>
 		</div>
 
